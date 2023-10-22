@@ -9,6 +9,7 @@ DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,openai.com
 DOMAIN-KEYWORD,openai
 
 # https://claude.ai/
