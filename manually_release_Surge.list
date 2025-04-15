@@ -10,3 +10,6 @@ DOMAIN,imgcdn.umiwi.com
 
 # Release Terminus Emby
 DOMAIN,pub1.emby.wtf
+
+# Release Cloudflare (DMIT)
+DOMAIN,static.cloudflareinsights.com
