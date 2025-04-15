@@ -16,3 +16,4 @@ DOMAIN,static.cloudflareinsights.com
 
 # Release App Store download (IOS)
 DOMAIN,iosapps.itunes.apple.com
+DOMAIN,downloaddispatch.itunes.apple.com
