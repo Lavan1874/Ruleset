@@ -2,3 +2,8 @@
 
 # Interrupt Telegram loading
 IP-CIDR,95.161.76.100/31
+
+# WeChat AD
+DOMAIN,wxa.wxs.qq.com
+DOMAIN,wximg.wxs.qq.com
+DOMAIN,wxsmw.wxs.qq.com
