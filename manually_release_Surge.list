@@ -18,12 +18,12 @@ DOMAIN,static.cloudflareinsights.com
 DOMAIN,lge.com
 
 # Lily Emby China mainland CDN
-DOMAIN,cdn.lilyemby.my,DIRECT
+DOMAIN,cdn.lilyemby.my
 
 # LANDrop
-DOMAIN,api.landrop.app,DIRECT
+DOMAIN,api.landrop.app
 
 # MiniBili
-DOMAIN-WILDCARD,*xy.mcdn.bilivideo.cn,DIRECT
+DOMAIN-WILDCARD,*xy.mcdn.bilivideo.cn
 
 DOMAIN-SUFFIX,zj96596.com
