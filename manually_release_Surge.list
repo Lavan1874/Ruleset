@@ -12,7 +12,7 @@ DOMAIN,imgcdn.umiwi.com
 DOMAIN,pub1.emby.wtf
 
 # Release Cloudflare (DMIT)
-DOMAIN,static.cloudflareinsights.com
+#DOMAIN,static.cloudflareinsights.com
 
 # Release LG TV update
 DOMAIN,lge.com
