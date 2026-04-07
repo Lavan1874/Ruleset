@@ -7,3 +7,9 @@ IP-CIDR,95.161.76.100/31
 DOMAIN,wxa.wxs.qq.com
 DOMAIN,wximg.wxs.qq.com
 DOMAIN,wxsmw.wxs.qq.com
+
+# Bilibili
+DOMAIN,ppio.bilivideo.com
+DOMAIN,kodo.bilivideo.com
+DOMAIN,mountaintoys.cn
+DOMAIN,szbdyd.com
