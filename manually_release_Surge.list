@@ -20,6 +20,9 @@ DOMAIN,lge.com
 # Lily Emby China mainland CDN
 DOMAIN,cdn.lilyemby.my
 
+# BaiCai+ Emby
+DOMAIN,hikeba.de,DIRECT
+
 # LANDrop
 DOMAIN,api.landrop.app
 
