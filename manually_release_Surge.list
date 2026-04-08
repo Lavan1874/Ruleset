@@ -23,7 +23,9 @@ DOMAIN-SUFFIX,free.lilyemby.com
 DOMAIN-SUFFIX,lilyemby.cc
 
 # BaiCai+ Emby
-DOMAIN,hikeba.de,DIRECT
+DOMAIN-SUFFIX,hikeba.de,DIRECT
+DOMAIN-SUFFIX,hkcdn.longemby.com,DIRECT
+DOMAIN-SUFFIX,pkstream-hk.longemby.top,DIRECT
 
 # LANDrop
 DOMAIN,api.landrop.app
