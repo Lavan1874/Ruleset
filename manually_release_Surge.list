@@ -19,6 +19,7 @@ DOMAIN,lge.com
 
 # Lily Emby China mainland CDN
 DOMAIN,cdn.lilyemby.my
+DOMAIN,free.lilyemby.com
 
 # BaiCai+ Emby
 DOMAIN,hikeba.de,DIRECT
