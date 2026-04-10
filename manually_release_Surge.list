@@ -8,8 +8,7 @@ DOMAIN,piccdn2.umiwi.com
 DOMAIN,piccdn3.umiwi.com
 DOMAIN,imgcdn.umiwi.com
 
-# Release Terminus Emby
-DOMAIN,pub1.emby.wtf
+
 
 # Release Cloudflare (DMIT)
 #DOMAIN,static.cloudflareinsights.com
@@ -26,6 +25,9 @@ DOMAIN-SUFFIX,lilyemby.cc
 DOMAIN-SUFFIX,hikeba.de,DIRECT
 DOMAIN-SUFFIX,hkcdn.longemby.com,DIRECT
 DOMAIN-SUFFIX,pkstream-hk.longemby.top,DIRECT
+
+# Release Terminus Emby
+DOMAIN-SUFFIX,emby.wtf,DIRECT
 
 # LANDrop
 DOMAIN,api.landrop.app
