@@ -1,12 +1,12 @@
 # Lily Emby China mainland CDN
-DOMAIN-SUFFIX,cdn.lilyemby.my
-DOMAIN-SUFFIX,free.lilyemby.com
-DOMAIN-SUFFIX,lilyemby.cc
+.lilyemby.my
+.lilyemby.com
+.lilyemby.cc
 
 # BaiCai+ Emby
-DOMAIN-SUFFIX,hikeba.de,DIRECT
-DOMAIN-SUFFIX,hkcdn.longemby.com,DIRECT
-DOMAIN-SUFFIX,pkstream-hk.longemby.top,DIRECT
+.hikeba.de
+.longemby.com
+.longemby.top
 
 # Release Terminus Emby
-DOMAIN-SUFFIX,emby.wtf,DIRECT
+.emby.wtf
