@@ -1,4 +1,4 @@
-# > 最新更新时间 2025.01.16
+# > 最新更新时间 2026.05.16
 
 # Release Bilibili
 DOMAIN,grpc.biliapi.net
@@ -7,7 +7,6 @@ DOMAIN,grpc.biliapi.net
 DOMAIN,piccdn2.umiwi.com
 DOMAIN,piccdn3.umiwi.com
 DOMAIN,imgcdn.umiwi.com
-
 
 
 # Release Cloudflare (DMIT)
@@ -24,3 +23,8 @@ DOMAIN-WILDCARD,*xy.mcdn.bilivideo.cn
 
 # Finance
 DOMAIN-SUFFIX,zj96596.com
+
+# BaiCai+ Emby (Peekabo HK CDN)
+DOMAIN-SUFFIX,hikeba.de
+DOMAIN-SUFFIX,longemby.com
+DOMAIN-SUFFIX,longemby.top
