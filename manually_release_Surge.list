@@ -23,6 +23,7 @@ DOMAIN-WILDCARD,*xy.mcdn.bilivideo.cn
 
 # Finance
 DOMAIN-SUFFIX,zj96596.com
+DOMAIN-SUFFIX,21tb.com
 
 # BaiCai+ Emby (Peekabo HK CDN)
 DOMAIN-SUFFIX,hikeba.de
