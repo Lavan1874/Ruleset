@@ -16,24 +16,49 @@ function parseArgument(arg) {
 
     const key = decodeURIComponent(pair.slice(0, idx));
     const value = decodeURIComponent(pair.slice(idx + 1));
+
     result[key] = value;
   });
 
   return result;
 }
 
-const config = parseArgument(rawArgument);
+function getEnvironmentValue(key, fallback) {
+  if (typeof $environment === "undefined") {
+    return fallback;
+  }
 
-const SURGE_TOKEN = config.token;
-const DEVICE_ID = config.device_id || "surge-device";
+  if ($environment[key]) {
+    return $environment[key];
+  }
+
+  return fallback;
+}
+
+function getDeviceId(config) {
+  // 允许手动覆盖，例如 argument=device_id=iphone-main&token=xxx
+  if (config.device_id) {
+    return config.device_id;
+  }
+
+  const system = getEnvironmentValue("system", "surge");
+  const model = getEnvironmentValue("device-model", "unknown-device");
+
+  return `${system}-${model}`;
+}
 
 function done(message) {
   console.log(message);
   $done();
 }
 
+const config = parseArgument(rawArgument);
+
+const SURGE_TOKEN = config.token;
+const DEVICE_ID = getDeviceId(config);
+
 if (!SURGE_TOKEN) {
-  done("Missing token in script argument. Expected: argument=device_id=iphone-main&token=xxx");
+  done("Missing token in script argument. Expected: argument=token=xxx or argument=device_id=xxx&token=xxx");
 } else {
   $httpClient.post({
     url: WORKER_URL,
@@ -44,6 +69,9 @@ if (!SURGE_TOKEN) {
     },
     body: JSON.stringify({
       source: "surge",
+      device_id: DEVICE_ID,
+      system: getEnvironmentValue("system", "unknown"),
+      device_model: getEnvironmentValue("device-model", "unknown"),
       ts: Math.floor(Date.now() / 1000)
     }),
     timeout: 10,
@@ -70,6 +98,15 @@ if (!SURGE_TOKEN) {
         parsed.device_id +
         ", ttl: " +
         parsed.ttl
+      );
+    }
+
+    if (parsed.skipped) {
+      return done(
+        "IP allowlist skipped: " +
+        parsed.reason +
+        ", ip: " +
+        parsed.ip
       );
     }
 
