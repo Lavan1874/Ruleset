@@ -36,7 +36,8 @@ function getEnvironmentValue(key, fallback) {
 }
 
 function getDeviceId(config) {
-  // 允许手动覆盖，例如 argument=device_id=iphone-main&token=xxx
+  // 允许手动覆盖，例如：
+  // argument=device_id=iphone-main&token=xxx
   if (config.device_id) {
     return config.device_id;
   }
@@ -56,6 +57,17 @@ const config = parseArgument(rawArgument);
 
 const SURGE_TOKEN = config.token;
 const DEVICE_ID = getDeviceId(config);
+
+// 临时 debug：确认 Surge 实际传入了什么
+console.log("DEBUG rawArgument=" + rawArgument);
+console.log("DEBUG typeof $environment=" + typeof $environment);
+console.log(
+  "DEBUG env=" +
+    (typeof $environment === "undefined"
+      ? "undefined"
+      : JSON.stringify($environment))
+);
+console.log("DEBUG deviceId=" + DEVICE_ID);
 
 if (!SURGE_TOKEN) {
   done("Missing token in script argument. Expected: argument=token=xxx or argument=device_id=xxx&token=xxx");
