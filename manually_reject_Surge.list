@@ -13,3 +13,6 @@ DOMAIN,ppio.bilivideo.com
 DOMAIN,kodo.bilivideo.com
 DOMAIN,mountaintoys.cn
 DOMAIN,szbdyd.com
+
+# phishing websites
+DOMAIN-SUFFIX,sites.google.com
