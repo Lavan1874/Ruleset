@@ -1,5 +1,7 @@
 // pgnfw-add.js
-
+console.log("[pgnfw-add] script started");
+console.log("[pgnfw-add] script type: " + (typeof $script !== "undefined" ? $script.type : "unknown"));
+console.log("[pgnfw-add] script name: " + (typeof $script !== "undefined" ? $script.name : "unknown"));
 const BASE_URL = "https://124.221.69.228/api/firewall/";
 
 function getArgument() {
