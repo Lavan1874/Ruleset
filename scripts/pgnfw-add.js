@@ -7,17 +7,15 @@ function getArgument() {
   if (typeof $argument === "string" && $argument.trim()) {
     return $argument.trim();
   }
-
-  // 如果是通过 iOS Shortcuts 手动触发，也可以从这里取参数
   if (typeof $intent !== "undefined" && $intent.parameter) {
     return String($intent.parameter).trim();
   }
-
   return "";
 }
 
+// 关键改动：改用 & 分隔（Surge 声明行是逗号分隔的 key=value，逗号会被拆坏）
 const TOKENS = getArgument()
-  .split(",")
+  .split("&")
   .map((t) => t.trim())
   .filter((t) => t.length > 0);
 
@@ -27,18 +25,15 @@ if (TOKENS.length === 0) {
 } else {
   console.log("[pgnfw-add] total tokens: " + TOKENS.length);
 
-  // 串行依次请求，前一个完成后再发下一个
   function run(index) {
     if (index >= TOKENS.length) {
       console.log("[pgnfw-add] all done");
       $done();
       return;
     }
-
     const token = TOKENS[index];
     const url = BASE_URL + "?action=add&token=" + encodeURIComponent(token);
-
-    console.log("[pgnfw-add] [" + (index + 1) + "/" + TOKENS.length + "] requesting...");
+    console.log("[pgnfw-add] [" + (index + 1) + "/" + TOKENS.length + "] requesting " + url);
 
     $httpClient.get(
       { url: url, timeout: 10 },
@@ -49,7 +44,7 @@ if (TOKENS.length === 0) {
           console.log("[pgnfw-add] [" + (index + 1) + "] status: " + response.status);
           if (data) console.log("[pgnfw-add] [" + (index + 1) + "] body: " + data);
         }
-        run(index + 1); // 继续下一个 token
+        run(index + 1);
       }
     );
   }
