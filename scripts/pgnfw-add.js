@@ -1,8 +1,7 @@
 // pgnfw-add.js
 console.log("[pgnfw-add] script started");
-console.log("[pgnfw-add] script type: " + (typeof $script !== "undefined" ? $script.type : "unknown"));
-console.log("[pgnfw-add] script name: " + (typeof $script !== "undefined" ? $script.name : "unknown"));
-const BASE_URL = "https://124.221.69.228/api/firewall/";
+
+const BASE_URL = "https://console.po0.io/modules/servers/penguin/api/firewall.php";
 
 function getArgument() {
   if (typeof $argument === "string" && $argument.trim()) {
@@ -17,31 +16,43 @@ function getArgument() {
   return "";
 }
 
-const TOKEN = getArgument();
+const TOKENS = getArgument()
+  .split(",")
+  .map((t) => t.trim())
+  .filter((t) => t.length > 0);
 
-if (!TOKEN) {
+if (TOKENS.length === 0) {
   console.log("[pgnfw-add] missing argument");
   $done();
 } else {
-  const URL = BASE_URL + TOKEN + "/add";
+  console.log("[pgnfw-add] total tokens: " + TOKENS.length);
 
-  $httpClient.get(
-    {
-      url: URL,
-      timeout: 10,
-
-      // 如果证书校验失败，再取消注释：
-      // insecure: true,
-    },
-    function (error, response, data) {
-      if (error) {
-        console.log("[pgnfw-add] failed: " + error);
-      } else {
-        console.log("[pgnfw-add] status: " + response.status);
-        if (data) console.log("[pgnfw-add] body: " + data);
-      }
-
+  // 串行依次请求，前一个完成后再发下一个
+  function run(index) {
+    if (index >= TOKENS.length) {
+      console.log("[pgnfw-add] all done");
       $done();
+      return;
     }
-  );
+
+    const token = TOKENS[index];
+    const url = BASE_URL + "?action=add&token=" + encodeURIComponent(token);
+
+    console.log("[pgnfw-add] [" + (index + 1) + "/" + TOKENS.length + "] requesting...");
+
+    $httpClient.get(
+      { url: url, timeout: 10 },
+      function (error, response, data) {
+        if (error) {
+          console.log("[pgnfw-add] [" + (index + 1) + "] failed: " + error);
+        } else {
+          console.log("[pgnfw-add] [" + (index + 1) + "] status: " + response.status);
+          if (data) console.log("[pgnfw-add] [" + (index + 1) + "] body: " + data);
+        }
+        run(index + 1); // 继续下一个 token
+      }
+    );
+  }
+
+  run(0);
 }
