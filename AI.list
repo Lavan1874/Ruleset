@@ -29,12 +29,23 @@ DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
 # ======== CDN & 静态资源 ========
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN,anthropic.com.cdn.cloudflare.net
 # ======== 认证 & 内容 ========
 DOMAIN,anthropic.auth0.com
 DOMAIN,anthropic-com.ghost.io
+# ======== 监控和遥测 ========
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN,browser-intake-us5-datadoghq.com
+DOMAIN-KEYWORD,datadog
+DOMAIN-KEYWORD,sift
+# ======== 客服 / 第三方 widget ========
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN,cdn.usefathom.com
 # ======== Anthropic 自有 IP 段 ========
 IP-CIDR,160.79.104.0/21
 IP-CIDR6,2607:6bc0::/32
