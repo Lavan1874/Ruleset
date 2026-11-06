@@ -30,7 +30,6 @@ DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,claudemcpclient.com
 DOMAIN-SUFFIX,claudemcpcontent.com
-DOMAIN-SUFFIX,datadoghq.com
 # ======== CDN & 静态资源 ========
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN,anthropic.com.cdn.cloudflare.net
@@ -42,6 +41,7 @@ DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,statsigapi.net
 DOMAIN,browser-intake-us5-datadoghq.com
 DOMAIN-KEYWORD,datadog
+DOMAIN-SUFFIX,datadoghq.com
 DOMAIN-KEYWORD,sift
 # ======== 客服 / 第三方 widget ========
 DOMAIN-SUFFIX,intercom.io
