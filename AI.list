@@ -22,6 +22,7 @@ DOMAIN-SUFFIX,observeit.net
 # ======== 进程名 ========
 PROCESS-NAME,"Claude Helper"
 PROCESS-NAME,claude
+PROCESS-NAME,*claude*
 # ======== 核心域名 ========
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
