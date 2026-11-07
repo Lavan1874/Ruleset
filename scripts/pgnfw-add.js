@@ -13,7 +13,6 @@ function getArgument() {
   return "";
 }
 
-// 关键改动：改用 & 分隔（Surge 声明行是逗号分隔的 key=value，逗号会被拆坏）
 const TOKENS = getArgument()
   .split("&")
   .map((t) => t.trim())
@@ -36,7 +35,11 @@ if (TOKENS.length === 0) {
     console.log("[pgnfw-add] [" + (index + 1) + "/" + TOKENS.length + "] requesting " + url);
 
     $httpClient.get(
-      { url: url, timeout: 10 },
+      {
+        url: url,
+        timeout: 10,
+        policy: "DIRECT",
+      },
       function (error, response, data) {
         if (error) {
           console.log("[pgnfw-add] [" + (index + 1) + "] failed: " + error);
